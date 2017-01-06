@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Demo Linhkien</title>
+   
+    <link href="~/Aress/User/css/Popup.css" rel="stylesheet" />
+    <link href="~/Aress/User/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Aress/User/css/cloud-zoom.css" rel="stylesheet" />
+    <link href="~/Aress/User/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Aress/User/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Aress/User/css/price-range.css" rel="stylesheet">
+    <link href="~/Aress/User/css/animate.css" rel="stylesheet">
+    <link href="~/Aress/User/css/main.css" rel="stylesheet">
+
+   
+    <link href="~/Aress/User/css/scroll.css" rel="stylesheet" />
+    <link href="~/Aress/User/css/responsive.css" rel="stylesheet">
+    <link href="~/Aress/User/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Aress/User/css/bootstrap-social.css" rel="stylesheet" />
+    <link href="~/Aress/User/css/PagedList.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="~/Aress/User/js/html5shiv.js"></script>
+    <script src="~/Aress/User/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="~/Aress/User/js/jquery-1.10.2.js"></script>
+    
+   <script src="~/Aress/User/js/bootstrap.min.js"></script>
+    <script src="~/Aress/User/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Aress/User/js/price-range.js"></script>
+    <script src="~/Aress/User/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Aress/User/js/main.js"></script>
+    <script src="~/Aress/User/js/jquery-ui.js"></script>
+    <script src="~/Scripts/controller/MenuScroll.js"></script>
+
+   
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<body>
+
+
+
+    <div class="layout">
+
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=1751355811807547";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!--ChatBox-->
+        <div class="fbchatbox hidden-xs" style="position:fixed;right:70px;bottom:0px;z-index:9999">
+            <div class="fb-page" id="chatfb" data-href="https://www.facebook.com/LinhKienNPN" data-small-header="true" data-adapt-container-width="false" data-height="300" data-width="300" data-hide-cover="true" data-show-facepile="true" data-show-posts="false" data-tabs="messages"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/LinhKienNPN"><a href="https://www.facebook.com/LinhKienNPN">Linh Kiện</a></blockquote></div></div>
+            <span id="closefbchat"  style="white-space: nowrap;position:absolute;right:2px;bottom:299px;padding: 3px 15px;background: #44619D;color: #fff;cursor: pointer;">Tắt</span>
+        </div>
+        <script src="~/Scripts/controller/ChatBox.js"></script>
+        <!--ChatBox-->
+
+
+        @Html.Partial("HeaderUser")     <!--Header-->
+
+
+        <section>
+            <div class="container">
+                <div class="row">
+
+
+                    @RenderBody()<!-- Phần trung tâm container-->
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        @Html.Partial("Footer")      <!--Footer-->
+
+    </div>
+
+  
+
+
+    
+    
+   
+
+</body>
+</html>

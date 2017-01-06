@@ -1,0 +1,67 @@
+﻿<!--Modal detail-->
+<div id="quickview-wrapper">
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <div class="product-details">
+                        <!--product-details-->
+                        <div class="col-sm-5">
+                            <div class="view-product">
+                                <a id="Image"></a>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="product-information">
+                                <!--/product-information-->
+
+
+                                <h2 id="TenLK"></h2>
+
+
+                                <span>
+                                    <span id="Gia"></span>
+                                    <label>Số lượng:</label>
+                                    @using (Html.BeginForm("AddItem", "Cart", FormMethod.Get))
+                                    {
+                                        <input hidden name="MaLK" id="MaLK" />
+                                        <input hidden name="returnUrl" value="@Request.Url.ToString()" />
+                                        <input type="number" id="Quantity" value="1" name="quantity" min="1" max="100" />
+                                            <button type="submit" class="btn btn-default add-to-cart">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                Thêm vào giỏ hàng
+                                            </button>
+                                    }
+
+                                </span>
+
+
+                                <p id="ConHang" hidden><b>Tình trạng:</b> Còn hàng</p>
+
+                                <p id="HetHang" hidden><b>Tình trạng:</b> Hết hàng</p>
+
+                                <p><b>Sản phẩm:</b> Mới </p>
+
+                                @*<a href=""><img src="~/Aress/User/images/product-details/share.png" class="share img-responsive" alt="" /></a>*@
+                                <div class="share img-responsive">
+
+                                    <!--code API FACEBOOK-->
+                                </div>
+                            </div><!--/product-information-->
+                        </div>
+                    </div>
+                    <hr />
+                    <span id="Mota"></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--Modal detail-->
