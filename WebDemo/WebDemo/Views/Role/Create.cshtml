@@ -1,0 +1,12 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+
+@using (Html.BeginForm())
+{
+    <p><h2 class="alert-danger"> @Html.ValidationMessage("CustomError")</h2></p>
+    <label> nhập tên quyền cần tạo  </label>
+           @Html.EditorFor(m=>m.Name)   
+            
+       
+        <input type="submit" class="btn btn-outline btn-success" value="tạo phân quyền" />
+        }
