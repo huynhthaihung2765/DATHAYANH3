@@ -1,0 +1,56 @@
+﻿@using WebDemo.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<LINHKIEN>
+
+@{
+    ViewBag.Title = "SPtheoloai";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+            @Html.Partial("LeftBar")
+
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">@ViewBag.tenloai</h2>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center hover13">
+                                        <a href="@Url.Action("Details","LinhKien",new { id = @item.MaLK})"><figure><img src="/ImagesProduct/@item.Anhbia" alt="" width="300" height="200" /></figure></a>
+                                        <h2>@item.Giaban.GetValueOrDefault(0).ToString("N0") VND</h2>
+                                        <a href="@Url.Action("Details","LinhKien",new { id = @item.MaLK})"><p>@item.TenLK</p></a>
+                                        <a class="btn btn-default btn-sm MiniDetail" data-id="@item.MaLK">Xem nhanh</a>
+                                        <a href="@Url.Action("AddItem","Cart",new { MaLK=@item.MaLK,quantity=1,returnUrl=ViewBag.Url })" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                    </div>
+
+                                </div>
+                              
+                            </div>
+                        </div>
+                    }
+
+                    @*<ul class="pagination">
+                            <li class="active"><a href="">1</a></li>
+                            <li ><a href="">2</a></li>
+                            <li ><a href="">3</a></li>
+                            <li ><a href="">&raquo;</a></li>
+                        </ul>*@
+                </div><!--features_items-->
+                @*Tạo Liên Kết Các Trang*@
+
+                <div class="features_items">
+                    <br />Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+
+                    <ul class="pagination">
+                        <li> @Html.PagedListPager(Model, page => Url.Action("Sptheoloai", new { page = page, id = @ViewBag.id }))</li>
+                    </ul>
+                </div>
+            </div>
+@Html.Partial("MiniDetail")
+<script src="~/Scripts/controller/MiniDetail.js"></script>
+    
