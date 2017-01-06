@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebDemo.Models.LINHKIEN>
+@foreach (var item in Model)
+{
+    
+    <div class="col-sm-3">
+        <div class="product-image-wrapper">
+            <div class="single-products">
+                <div class="productinfo text-center hover13">
+                    <a href="@Url.Action("Details","linhKien",new { id = @item.MaLK})"><figure><img src="~/ImagesProduct/@item.Anhbia" alt="" width="175" height="131" /></figure></a>
+                    <h2>@item.Giaban.GetValueOrDefault(0).ToString("N0") VND</h2>
+                    <p>@item.TenLK</p>
+                    <a class="btn btn-default add-to-cart" href="@Url.Action("AddItem","Cart",new { MaLK = @item.MaLK, quantity = 1,returnUrl=ViewBag.Url})">
+                        <i class="fa fa-shopping-cart"></i>
+                        Thêm vào giỏ hàng
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
