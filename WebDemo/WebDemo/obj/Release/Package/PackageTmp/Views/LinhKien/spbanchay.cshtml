@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebDemo.Models.spbanchay>
+@foreach (var lk in Model)
+{
+
+
+        
+        
+        <div class="col-sm-4">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center hover13">
+                        <a href="@Url.Action("Details","LinhKien",new {id = lk.MaLK})"><figure><img src="~/ImagesProduct/@lk.Anhbia" width="300" height="200" alt="" /></figure></a>
+                        <h2>@lk.Giaban.GetValueOrDefault(0).ToString("N0") VND</h2>
+                        <a href="@Url.Action("Details","LinhKien",new {id = lk.MaLK})"><p>@lk.TenLK</p></a>
+                        <a class="btn btn-default btn-sm MiniDetail" data-id="@lk.MaLK">Xem nhanh</a>
+                        <a href="@Url.Action("AddItem","Cart",new { MaLK=@lk.MaLK,quantity=1,returnUrl=Request.Url.ToString() })" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                    </div>
+                    <img src="~/Aress/User/images/home/base_hot.png" class="new" alt="" />
+                </div>
+               
+            </div>
+        </div>
+       
+       
+    }
+

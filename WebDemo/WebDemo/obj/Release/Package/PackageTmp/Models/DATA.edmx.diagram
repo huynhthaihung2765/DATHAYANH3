@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="88fdf8b1973f4d08b656f40177bc6b65" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="QLLINHKIENModel.Admin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.CHITIETDONTHANG" Width="1.5" PointX="7.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.DONDATHANG" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.LINHKIEN" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.LOAILK" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.NHASANXUAT" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="QLLINHKIENModel.FK_LOAILK" ManuallyRouted="false" />
+        <AssociationConnector Association="QLLINHKIENModel.FK_NHASANXUAT" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.AspNetUser" Width="1.75" PointX="3" PointY="1.125" />
+        <AssociationConnector Association="QLLINHKIENModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.AspNetUserClaim" Width="1.5" PointX="5.5" PointY="1.25" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.AspNetUserLogin" Width="1.5" PointX="5.5" PointY="4" />
+        <AssociationConnector Association="QLLINHKIENModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="QLLINHKIENModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="QLLINHKIENModel.FK_Aspnetuser" />
+        <EntityTypeShape EntityType="QLLINHKIENModel.tkb" Width="1.5" PointX="8.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

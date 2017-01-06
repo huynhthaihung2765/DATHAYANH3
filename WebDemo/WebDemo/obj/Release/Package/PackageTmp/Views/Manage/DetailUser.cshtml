@@ -1,0 +1,60 @@
+﻿@model WebDemo.Models.AspNetUser
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        Họ tên:
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Hoten)
+    </dd>
+
+    <dt>
+        Mail:
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+
+    <dt>
+        Địa chỉ:
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Diachi)
+    </dd>
+
+    <dt>
+        Số điện thoại:
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </dd>
+
+    <dt>
+        Giới tính:
+    </dt>
+
+    <dd>
+        @if(Model.Gioitinh==true)
+        {
+            <label>Nam</label>
+        }
+        else
+        {
+            <label>Nữ</label>
+        }
+    </dd>
+
+  
+
+ 
+
+    
+
+</dl>
+<p>
+    [@Html.ActionLink("Thay đổi thông tin tài khoản", "EditUser", new { id = Model.Id })]
+</p>

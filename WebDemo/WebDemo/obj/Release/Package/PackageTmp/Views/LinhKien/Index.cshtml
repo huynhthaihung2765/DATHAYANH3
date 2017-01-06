@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WebDemo.Models.LINHKIEN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+            @Html.Partial("Slide")     @*show phần header line gồm slide *@
+
+
+
+
+            @Html.Partial("LeftBar")                  <!--LEFT SIDERAR-->
+            <!-- RIGHT SIDEBAR-->
+            <div class="col-sm-9 padding-right">
+
+
+                <div class="features_items">
+                    <!--NEW_items-->
+                    <h2 class="title text-center">Sản phẩm mới</h2>
+                    @foreach (var lk in Model)
+                    {
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center hover13">
+                                        <a   href="@Url.Action("Details","LinhKien",new {id = lk.MaLK})"><figure><img src="~/ImagesProduct/@lk.Anhbia" width="300" height="200" alt="" /></figure></a>
+                                        <h2>@lk.Giaban.GetValueOrDefault(0).ToString("N0") VND</h2>
+                                        <a href="@Url.Action("Details","LinhKien",new {id = lk.MaLK})"><p>@lk.TenLK</p></a>
+                                        <a class="btn btn-default btn-sm MiniDetail" data-id="@lk.MaLK">Xem nhanh</a>
+                                        <a href="@Url.Action("AddItem","Cart",new { MaLK=@lk.MaLK,quantity=1 ,returnUrl=ViewBag.Url})" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                       
+                                    </div>
+                                    <img src="~/Aress/User/images/home/new.png" class="new" alt="" />
+
+                                </div>
+                              
+                            </div>
+                        </div>
+                     
+                    }
+                </div><!--NEW_items-->
+              
+
+
+                <div class="features_items">
+                    <!--HOT_items-->
+                    <h2 class="title text-center">Sản phẩm bán chạy</h2>
+
+
+
+
+
+                    @Html.Action("spbanchay", "LinhKien")
+
+
+
+                </div>
+
+
+
+             
+
+
+            </div>
+@Html.Partial("MiniDetail")
+
+<script>
+    $(window).load(function () {
+        $('#Home').addClass("active");
+    });
+   
+</script>
+<script src="~/Scripts/controller/MiniDetail.js"></script>
+ 
+
+
+
+
+
+
