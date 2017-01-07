@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebDemo.Models.DetailOrder>
+@{
+    ViewBag.Title = "DetailOrder";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<div>
+    <center><h4 style="color:darkorange">Đơn hàng #@ViewBag.Id</h4></center>
+    <hr />
+
+    <div class="table-responsive">
+        <table class="table table-striped" id="myTable">
+            <thead>
+                <tr>
+                    <th>
+                        Tên sản phẩm
+                    </th>
+                    <th>
+                        Giá
+                    </th>
+                    <th>
+                        Số lượng
+                    </th>
+                    <th>
+                        Tổng cộng
+                    </th>
+                   
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Details","LinhKien",new { id = item.Malk})">@item.TenLK</a>
+                        </td>
+                        <td>
+                            @item.Giaban.GetValueOrDefault(0).ToString("N0") ₫
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.quantity)
+                        </td>
+                        <td>
+                            @item.Dongia.GetValueOrDefault(0).ToString("N0") ₫
+                        </td>
+
+
+                    </tr>
+                }
+                
+                 
+                
+            </tbody>
+            
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+
+    <p align="right"><label>Tổng cộng: @ViewBag.Total ₫</label></p>
+    <a class="btn btn-warning" href="@Url.Action("Index","Manage")">Trở về trang tài khoản</a>
+</div>
+
+
+
+

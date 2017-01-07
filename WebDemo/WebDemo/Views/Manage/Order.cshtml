@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebDemo.Models.DONDATHANG>
+<div>
+    <center><h4 style="color:darkorange">Đơn hàng</h4></center>
+    <hr />
+   
+    <div class="table-responsive">
+        <table class="table table-striped" id="myTable">
+            <thead>
+                <tr>
+                    <th>
+                        Mã đơn hàng
+                    </th>
+                    <th>
+                        Ngày mua
+                    </th>
+                    <th>
+                        Tình trạng
+                    </th>
+                    <th>
+                        Giao hàng
+                    </th>
+                    <th>
+                        *
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MaDonHang)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ngaydat)
+                        </td>
+                        
+                            @if (item.Dathanhtoan == true)
+                            {
+                                <td>thanh toán</td>
+                            }
+                            else
+                            {
+                                <td>Đặt hàng</td>
+                            }
+                        
+                        
+                           @if (item.Tinhtranggiaohang == true)
+                           {
+                            <td> Đã giao </td>
+                           }
+                           else
+                           {
+                            <td>Đang đợi duyệt</td>
+                           }
+                       
+                        <td>
+                            @Html.ActionLink("Chi Tiết", "DetailOrder", new { id = item.MaDonHang }) 
+                        </td>
+                      
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.table-responsive -->
+
+</div>
