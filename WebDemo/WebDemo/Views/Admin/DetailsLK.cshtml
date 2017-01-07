@@ -1,0 +1,91 @@
+﻿@model WebDemo.Models.LINHKIEN
+
+@{
+    ViewBag.Title = "DetailsLK";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DetailsLK</h2>
+
+<div>
+    <h4>LINHKIEN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Linh kiện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLK)
+        </dd>
+
+        <dt>
+            Tên Linh Kiện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLK)
+        </dd>
+
+        <dt>
+            Giá Bán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giaban)
+        </dd>
+
+        <dt>
+            Mô Tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            Ảnh Sản Phẩm
+        </dt>
+
+        <dd>
+            <img src="~/images/@Model.Anhbia"/>
+        </dd>
+
+        <dt>
+            Ngày Cập Nhật
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaycapnhat)
+        </dd>
+
+        <dt>
+            Số Lượng Tồn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongton)
+        </dd>
+
+        <dt>
+            Tên Loại Linh Kiện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAILK.TENLLK)
+        </dd>
+
+        <dt>
+            Tên Nhà Sản Xuất
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHASANXUAT.TenNSX)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Trở về danh sách sản phẩm", "ShowAllLK")
+</p>
